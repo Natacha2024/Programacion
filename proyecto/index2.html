@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela Técnica N° 4004 MAS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Dry Brush';
+            src: url('font/Dry Brush.ttf') format('truetype');
+        }
+        body { 
+            font-family: "Arial", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url('img/high-resolution-watercolor-background-v0k2rm8d5z8xi62b.jpg'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+        }
+        header {
+            font-family: 'Dry Brush', sans-serif;
+            font-size: 3rem;
+            background-color: transparent;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer {
+            font-family: 'Arial', cursive; 
+            font-size: 1rem; 
+            background-color: transparent;
+            color: #12447e;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        @media screen and (max-width: 991px) {
+            #country-page #destinations .country-box {
+                width: 315px;
+                margin-bottom: 40px;
+                margin-left: 15px;
+                height: 490px;
+            }
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        nav {
+            float: left;
+            width: 15%;
+            text-align: center;
+            background: #9dc9dd;
+            padding: 1em;
+            position: left; 
+            top: 0;
+            right: 0; 
+            height: 80vh;
+            overflow-y: auto;
+            z-index: 50; 
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 1em;
+        }
+        .main {
+            width: 80%;
+            padding: 1em;
+            margin-left: 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        .content {
+            margin-bottom: 1em;
+        }
+        .content img {
+            max-width: 30%;
+        }  
+        
+        #contacto {
+            position: fixed; 
+            top: 50px; 
+            right: 20px; 
+            width: 200px; 
+            padding: 20px; /* Ajuste del padding para equilibrar el espacio interno */
+            background-color: #f4f4f4; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            z-index: 1000; 
+        }
+
+        #contacto h2 {
+            font-size: 1em; 
+            margin-bottom: 1em; 
+        }
+
+        #contacto p {
+            font-size: 0.75em; 
+            margin-bottom: 1em; /* Ajuste del margen inferior para separación uniforme */
+        }
+
+        #contacto form {
+            width: 100%; /* Ajuste para que el formulario ocupe todo el ancho disponible */
+            margin: 0; /* Eliminación de la propiedad 'none', que no es válida aquí */
+        }
+
+        #contacto form label {
+            display: block;
+            font-size: 0.75em; 
+            margin-bottom: 0.5em; 
+        }
+
+        #contacto form input[type="text"],
+        #contacto form input[type="email"],
+        #contacto form input[type="tel"],
+        #contacto form textarea {
+            width: 100%; /* Ajuste para que los campos ocupen todo el ancho del formulario */
+            padding: 0.8em; 
+            margin-bottom: 0.5em; /* Ajuste del margen inferior para separación uniforme */
+            border: 1px solid #ccc; /* Corrección del grosor del borde */
+            border-radius: 3px; 
+            font-size: 0.75em; 
+        }
+
+        #contacto form textarea {
+            resize: vertical; 
+            min-height: 75px; 
+        }
+
+        #contacto form button {
+            background-color: #95e675;
+            color: #fff; 
+            border-radius: 3px; /* Corrección de la propiedad border-radius */
+            border: none;
+            padding: 0.7em 1em; 
+            font-size: 0.75em; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+
+        .btn-close {
+            background-color: #ccc;
+            color: #333; 
+            border: none; 
+            padding: 0.5em; 
+            font-size: 0.8em; 
+            cursor: pointer; 
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute; 
+            top: 1em; 
+            right: 1em; 
+        }
+
+        .btn-close:hover {
+            background-color: #999; 
+            color: #fff; 
+        }
+
+        .section-box {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 10px; /* Esquinas redondeadas */
+            width: 100%;
+            max-width: 600px; /* Limitamos el ancho máximo */
+        }
+
+        .section-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #galeria h2 {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        #historia, #ubicacion {
+            margin-bottom: 10px; /* Corregido: agregado de unidad de medida */
+            background-color: rgba(255, 255, 255, 1); /* Fondo semi-transparente */
+            padding: 20px;
+            box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); /* Sombra */
+            border-radius: 10px; /* Esquinas redondeadas */
+        }
+        .section-box + .section-box {
+            margin-top: 1.5cm; /* Separación de 1.5 centímetros entre recuadros */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Escuela N° 4-004</h1>
+            <h1>"Mercedes Alvarez de Segura"</h1>
+        </div>
+    </header>
+
+    <section class="content">
+        <nav>
+            <ul>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#carreras">Carreras</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="main">
+            <section id="historia" class="section-box">
+                <h2>Historia de la Escuela...</h2>
+                <p>La Escuela nace en 1938, como escuela de arte femenino, para formar mujeres en moda y arte.</p>
+                <p>Se la bautiza con el nombre de una de las damas mendocinas que bordaron para San Martín la Bandera de los Andes: "MERCEDES ALVAREZ DE SEGURA". El nombre es significativo y da cuenta de la impronta de la escuela: formación de mujeres trabajadoras.</p>
+            </section>
+
+            <section id="carreras" class="section-box">
+                <h2>Oferta educativa</h2>
+                <p>En nuestra escuela ofrecemos diversas carreras y programas educativos.</p>
+                <ul>
+                    <li>Tecnicatura en Alimentos</li>
+                    <li>Tecnicatura Textil</li>
+                    <li>Bachiller en Artes Visuales</li>
+                </ul>
+            </section>
+
+            <section id="galeria">
+                <h2>Galería de Imágenes</h2>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="626.jpg" class="d-block w-100" alt="Imagen 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="20181003163320_MAG_9134.jpg" class="d-block w-100" alt="Imagen 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Screenshot_2019-08-06-01-56-14-814_com.facebook.katana.jpg" class="d-block w-100" alt="Imagen 3">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="ubicacion" class="section-box">
+                <h2>Ubicación</h2>
+                <p>Nos encontramos en:</p>
+                <p>Calle Luzuriaga 20, San Rafael, Argentina</p>
+                <p>Teléfono +54 (260) 4423557</p>
+                <p>Email estec4004sup@mendoza.edu.ar</p>
+            </section>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Información de Contacto</h2>
+        <p>Para más información, por favor completa el siguiente formulario:</p>
+        <form action="procesar_solicitud.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>                        
+            <label for="comentario">Comentario:</label>
+            <textarea id="comentario" name="comentario" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <button type="button" class="btn-close" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Natacha Coria. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
